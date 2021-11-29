@@ -50,8 +50,10 @@ export interface SliderContainerProps {
 }
 
 export interface SliderPreviewProps {
-    class: string;
-    style: string;
+    className: string;
+    readOnly: boolean;
+    style?: string;
+    styleObject?: CSSProperties;
     valueAttribute: string;
     minValueType: MinValueTypeEnum;
     staticMinimumValue: number | null;
