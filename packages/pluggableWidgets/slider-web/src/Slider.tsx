@@ -16,8 +16,6 @@ import { getStyleProp } from "./utils/getStyleProp";
 export default function Slider(props: SliderContainerProps): ReactNode {
     const {
         valueAttribute,
-        class: className,
-        style: styleProp,
         orientation,
         heightUnit,
         height,
@@ -72,12 +70,11 @@ export default function Slider(props: SliderContainerProps): ReactNode {
     });
     const handle = createHandleGenerator({ tooltip, showTooltip, tooltipType });
     const { onChange } = useOnChangeDebounced({ valueAttribute, onChange: onChangeProp });
-    const style = getStyleProp({ orientation, style: styleProp, height, heightUnit });
+    const style = getStyleProp({ orientation, height, heightUnit });
 
     return (
         <SliderComponent
             disabled={valueAttribute.readOnly}
-            className={className}
             rootStyle={style}
             vertical={isVertical(props)}
             value={valueAttribute.value?.toNumber()}

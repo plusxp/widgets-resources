@@ -3,7 +3,6 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
-import { CSSProperties } from "react";
 import { ActionValue, DynamicValue, EditableValue } from "mendix";
 import { Big } from "big.js";
 
@@ -21,8 +20,6 @@ export type HeightUnitEnum = "percentage" | "pixels";
 
 export interface SliderContainerProps {
     name: string;
-    class: string;
-    style?: CSSProperties;
     tabIndex?: number;
     id: string;
     valueAttribute: EditableValue<Big>;
@@ -50,10 +47,7 @@ export interface SliderContainerProps {
 }
 
 export interface SliderPreviewProps {
-    className: string;
     readOnly: boolean;
-    style?: string;
-    styleObject?: CSSProperties;
     valueAttribute: string;
     minValueType: MinValueTypeEnum;
     staticMinimumValue: number | null;
